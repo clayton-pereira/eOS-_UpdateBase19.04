@@ -4,8 +4,7 @@
 # ElementaryOS base 19.04 Disco Dingo
 #
 # Autor: Clayton Pereira
-# Contatos: E-mail:   clayton.pereira@protonmail.ch
-#           Telegram: @Claytonpx13 - URL: https://telegram.me/Claytonpx13
+# Telegram: @Claytonpx13 - URL: https://telegram.me/Claytonpx13
 #
 # Descrição:
 #    Este script foi criado para trocar a base do sistema Elementary OS 5.0
