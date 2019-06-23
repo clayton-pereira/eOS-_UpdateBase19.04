@@ -177,6 +177,10 @@ echo " Modificando repositório principal do sistema..."; sleep 2
 sed -i "s/bionic-backports main restricted universe/disco-backports main restricted/" /etc/apt/sources.list
 sed -i "s/bionic/disco/g" /etc/apt/sources.list
 
+# Adicionando repositório elementary-os/daily
+echo "deb http://ppa.launchpad.net/elementary-os/daily/ubuntu disco main
+deb-src http://ppa.launchpad.net/elementary-os/daily/ubuntu disco main" >> /etc/apt/sources.list.d/elementary-os-daily.list
+
 # Esta linha é opcional, serve para corrigir erros de janela em alguns softwares
 # Caso não queira alterar o valor do GTK_CSD comente a linha abaixo.
 echo "export GTK_CSD=0" >> /etc/profile
