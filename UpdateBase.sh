@@ -70,7 +70,7 @@ if zenity --title="eOS Update base:19.04" --width=550 --height=400 \
     rm -f /tmp/termo.txt
 
     # Parando alguns serviços para atualização.
-    for service in bluetooth cron cups cups-browsed openvpn ufw
+    for service in cron cups cups-browsed openvpn ufw
     do
         systemctl stop "$service" &> /dev/null
     done
