@@ -70,9 +70,9 @@ if zenity --title="eOS Update base:19.04" --width=550 --height=400 \
     rm -f /tmp/termo.txt
 
     # Parando alguns serviços para atualização.
-    for service in "apparmor bluetooth cron cups cups-browsed openvpn ufw"
+    for service in apparmor bluetooth cron cups cups-browsed openvpn ufw
     do
-        systemctl stop "$service"
+        systemctl stop "$service" &> /dev/null
     done
 else
     rm -f /tmp/termo.txt
@@ -88,7 +88,7 @@ fi
 apt update &> /dev/null && apt upgrade -y &> /dev/null
 
 echo
-echo " Limpando o lixo..."; sleep 1
+echo " Limpando cache e pacotes desnecessários..."; sleep 1
 
 apt autoremove -y &> /dev/null
 apt clean &> /dev/null
