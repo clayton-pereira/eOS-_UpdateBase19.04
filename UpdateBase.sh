@@ -80,6 +80,10 @@ else
 fi
 # -----------------------------------------------------------------------------#
 # -------------------------------[ Atualização ]-------------------------------#
+# Verificando se existe arquivo lock e excluindo.
+[[ -f /var/lib/apt/lists/lock ]] && rm -f /var/lib/apt/lists/lock
+[[ -f /var/cache/apt/archives/lock ]] && rm -f /var/cache/apt/archives/lock
+
 # Atualizando o sistema e limpando o cache.
 apt update && apt upgrade -y
 
@@ -176,6 +180,10 @@ sed -i "s/bionic/disco/g" /etc/apt/sources.list
 # Esta linha é opcional, serve para corrigir erros de janela em alguns softwares
 # Caso não queira alterar o valor do GTK_CSD comente a linha abaixo.
 echo "export GTK_CSD=0" >> /etc/profile
+
+# Verificando se existe arquivo lock e excluindo.
+[[ -f /var/lib/apt/lists/lock ]] && rm -f /var/lib/apt/lists/lock
+[[ -f /var/cache/apt/archives/lock ]] && rm -f /var/cache/apt/archives/lock
 
 reset; sleep 1
 echo "Iniciando Atualização dos repositórios."; sleep 1
