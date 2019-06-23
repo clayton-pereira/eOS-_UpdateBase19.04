@@ -103,11 +103,14 @@ if zenity --question --ellipsize \
     }
 
     # Adicionando repositórios Flatpak e elementary-tweaks
+    echo "Adicionando repositórios..."; sleep 1
     add-apt-repository ppa:alexlarsson/flatpak -y -n
     add-apt-repository ppa:philip.scott/elementary-tweaks -y -n
     apt install elementary-tweaks -y &> /dev/null
     apt install flatpak -y &> /dev/null
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    echo "Concluido."
+    reset; sleep 1
 
     [[ $(command -v add-apt-repository) ]] && {
         # Removendo software-properties pois não será mais necessário.
@@ -126,7 +129,8 @@ else
 fi
 
 # Verificando a presença do update-manager no sistema.
-echo " Checando a presença do update-manager no sistema..."
+echo
+echo " Checando a presença do update-manager no sistema..."; sleep 1
 [[ $(command -v do-release-upgrade) ]] || {
     # Instalando o update-manager
     echo " Baixando update-manager..."
@@ -179,14 +183,15 @@ echo "Iniciando Atualização dos repositórios."; sleep 1
 ### Atualizando os repositórios Disco Dingo
 apt update
 
-### Primeira etapa da atualização
 zenity --info --ellipsize \
 --text="Nesta etapa de atualização.\n Caso apareça perguntas sobre atualizar arquivos de serviços, confirme com 'Y'"\
 &> /dev/null
-sleep 1; apt upgrade -y
 
-### Segunda etapa da atualização
+### Atualizando sistema
+sleep 1; apt upgrade -y
 sleep 1; apt full-upgrade -y
+
+reset; sleep 1
 
 echo
 echo "Limpando..."; sleep 1
