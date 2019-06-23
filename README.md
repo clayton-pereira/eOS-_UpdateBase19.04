@@ -35,8 +35,10 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/clayton-pereira/eOS_Upda
 
 <br>
 
-<p><b> Bug </b></p>
+<p><b> Atenção </b></p>
 <p>
   Após a atualização da base de sistema, o software-properties fica inutilizável, se você precisar adicionar repositórios no sistema, terá que fazer manualmente pois o comando <b><i>add-apt-repository</i></b> não estará funcionando.<br>
-Toda via será perguntado antes da atualização do sistema se deseja instalar os repositórios do <a href="https://github.com/elementary-tweaks/elementary-tweaks">elementary-tweaks</a> e <a href="https://flatpak.org/setup/elementary%20OS/">flatpak</a>
+Toda via será perguntado antes da atualização do sistema se deseja instalar os repositórios do <a href="https://github.com/elementary-tweaks/elementary-tweaks">elementary-tweaks</a> e <a href="https://flatpak.org/setup/elementary%20OS/">flatpak</a>.
+    <br>
+    Considere também que o suporte da versão 19.04 é de 9 meses e, se encerrará aproximadamente entre Dezembro de 2019 e Janeiro de 2020.
 </p>
