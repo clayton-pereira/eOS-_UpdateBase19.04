@@ -85,7 +85,7 @@ fi
 [[ -f /var/cache/apt/archives/lock ]] && rm -f /var/cache/apt/archives/lock
 
 # Atualizando o sistema e limpando o cache.
-apt update && apt upgrade -y
+apt update &> /dev/null && apt upgrade -y &> /dev/null
 
 echo
 echo " Limpando o lixo..."; sleep 1
